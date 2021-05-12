@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Upload Page </title>
+        <link rel="shortcut icon" type="image/jpg" href= {{ url_for('static', filename = 'image/user_icon.jpg') }}/>
+        <link rel="stylesheet" href= {{ url_for('static', filename = 'css/style.css') }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-grid.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-reboot.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-utilities.min.css") }}>
+        <script>
+            function preview_JD(){
+                if(document.getElementById("JD").innerHTML=="CLOSE"){
+                    document.getElementById("JD").innerHTML="JD_PREVIEW"
+                    document.getElementById("preview").style.display="none"
+                    // document.getElementById(document.getElementById('ODA_JD').value).style.display="none" 
+                    // document.getElementById("jd_close").style.display=""
+                    // document.getElementById("ODA_JD").style.display=""
+                }
+                else{
+                    document.getElementById("JD").innerHTML="CLOSE"
+                    document.getElementById("preview").style.display="block"
+                    document.getElementById("jd_close").innerHTML=""
+                    // document.getElementById(document.getElementById('ODA_JD').value).style.display="block"
+                    // document.getElementById("jd_close").style.display="none"
+                    // document.getElementById("ODA_JD").style.display="none"
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- <div align ="center" class="bodytop">
+            <br>
+            <h1>Resume Screening</h1> 
+            <br>
+        </div>
+
+        <ul>
+            <li><a href="/" target="_self">Home</a></li>
+            <li><a href="/upload" target="_self">Upload</a></li>
+            <li style="float:right"><a class="active" href="/logout" target="_self">Logout</a></li>
+        </ul> -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bodytop">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Resume Screening</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/" target="_self">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/upload" target="_self">Upload</a>
+                  </li>
+                </ul>
+                <!-- <div class="float-right"><a class="custom-link text-white" aria-current="page" href="/login" target="_self">Login</a></div>
+                <div class="float-right"><a class="custom-link text-white" aria-current="page" href="/logout" target="_self">Logout</a></div> -->
+              </div>
+            </div>
+          </nav>
+
+
+        <div class="wrapper mt-5"> 
+            <div class="container-fluid">
+                <div class="row">
+                    <div class = "col-sm-5" style="text-align: right;">
+                        <h5> Please upload the document below.</h5><br>
+                        <form action="/upload" method="post" enctype = multipart/form-data>
+                        <input type="file" name="file" required><button class="button button2" data-bs-toggle="tooltip" data-bs-placement="top" title="Submit to upload the file" type="submit">Submit</button>
+                        </form>
+                        <p>
+                            {% if message != null %}
+                            <div class="alert alert-success" role="alert" style="width: 200px; text-align: center;" align = "center">
+                                {{message}}
+                            </div>
+                            {% endif %}
+                        </p>
+                    </div>
+                    <!-- | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> | <br>  -->
+                    <div class="col-sm-6" style="text-align: center;">
+                        <div id="preview" style="display: none;"> 
+                            <embed src= {{ url_for('static', filename = 'ODA_JD.pdf') }} type="application/pdf"  height="300px" width="100%">
+                        </div>
+                        <!-- <div id="ODA_JD1" style="display: none;">
+                            <embed src= {{ url_for('static', filename = 'jd1.pdf') }} type="application/pdf"  height="300px" width="100%">
+                        </div>
+                        <div id="ODA_JD2" style="display: none;">
+                            <embed src= {{ url_for('static', filename = 'jd2.pdf') }} type="application/pdf"  height="300px" width="100%">
+                        </div> -->
+                        <div>
+                            <p >Press JD_PREVIEW to view the Job Description</p><br>
+                            <!-- <p >Select a JD from below and press JD_PREVIEW</p><br> -->
+                            <!-- id="jd_close" <select id="select_jd" name="JD">
+                                <option value='ODA_JD'>OnDemand Agility</option>
+                                <option value='ODA_JD1'>Comscore</option>
+                                <option value='ODA_JD2'>Amazon</option>
+                            </select> -->
+                            <button class="button button2" id="JD" type="submit" onclick="preview_JD()" data-bs-toggle="tooltip" data-bs-placement="top" title="Click to View the JD">JD_PREVIEW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <br><br><br><br><br><br><br><br><br><br>
+        <marquee width="100%" direction="left" height="50px" scrollamount="15">
+          OnDemand Agility Solutions
+      </marquee> -->
+        <div class="footer">
+            <span align = "left"> &COPY; 2021 &nbsp; OnDemand Agility Solutions &trade;</span>
+        </div>
+    </body>
+    
+    <script src= {{ url_for('static', filename = '/js/jquery.min.js') }}></script>
+    <script src= {{ url_for('static', filename = 'bootstrap/js/bootstrap.min.js') }}></script>
+</html>

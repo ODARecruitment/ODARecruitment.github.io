@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Logout Page </title>
+        <link rel="shortcut icon" type="image/jpg" href= {{ url_for('static', filename = 'image/login_icon.jpg') }}/>
+        <link rel="stylesheet" href= {{ url_for('static', filename = 'css/style.css') }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-grid.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-reboot.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-utilities.min.css") }}>
+    </head>
+    
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bodytop">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Resume Screening</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/" target="_self" style="text-decoration: solid;">Home</a>
+              </li>
+              <li class="nav-item">
+                <!-- <a class="nav-link" aria-current="page" href="/upload" target="_self">Upload</a> -->
+              </li>
+            </ul>
+            <div class="float-right"><a class="custom-link text-white" aria-current="page" href="/login" target="_self" style="text-decoration: solid;">Login</a></div>
+            <!-- <div class="float-right"><a class="custom-link text-white" aria-current="page" href="/logout" target="_self">Logout</a></div> -->
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="wrapper mt-5"> 
+          <div class="container-fluid">
+              <div align ="center">
+                  <h3>Thank You !!! </h3>
+              </div>
+          </div>
+      </div>
+      <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <marquee width="100%" direction="left" height="50px" scrollamount="15">
+        OnDemand Agility Solutions
+      </marquee> -->
+      
+      <div class="footer">
+        <span align = "left"> &COPY; 2021 &nbsp; OnDemand Agility Solutions &trade;</span>
+      </div>
+    </body>
+    
+    <script src= {{ url_for('static', filename = '/js/jquery.min.js') }}></script>
+    <script src= {{ url_for('static', filename = 'bootstrap/js/bootstrap.min.js') }}></script>
+</html>

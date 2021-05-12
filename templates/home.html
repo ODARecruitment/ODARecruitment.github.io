@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Home Page </title>
+        <link rel="shortcut icon" type="image/jpg" href= {{ url_for('static', filename = 'image/home_icon.jpg') }}/>
+        <link rel="stylesheet" href= {{ url_for('static', filename = 'css/style.css') }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-grid.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-reboot.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-utilities.min.css") }}>
+        <!-- <link rel="stylesheet" href= {{ url_for('static', filename = 'css/bootstrap.min.css') }}> -->
+        <!-- <script src= {{ url_for('static', filename = 'js/bootstrap.min.js') }}></script>
+        <script src= {{ url_for('static', filename = '/js/jquery.min.js') }}></script> -->
+    </head>
+    
+    <body>
+        <!-- <div align ="center" class="bodytop">
+            <br>
+            <h1>Resume Screening</h1>
+            <br>
+        </div>
+
+        <ul>
+            <li><a href="/" target="_self">Home</a></li>
+            <li><a href="/upload" target="_self">Upload</a></li>
+            <li style="float:right"><a class="active" href="/logout" target="_self">Logout</a></li>
+        </ul> -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bodytop">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Resume Screening</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/" target="_self">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/upload" target="_self">Upload</a>
+                  </li>
+                </ul>
+                <div class="float-right"><a class="custom-link text-white" aria-current="page" href="/login" target="_self" style="text-decoration: solid;">Login</a></div>
+                <!-- <div class="float-right"><a class="custom-link text-white" aria-current="page" href="/logout" target="_self">Logout</a></div> -->
+              </div>
+            </div>
+          </nav>
+          
+        <div class="wrapper mt-5"> 
+            <div class="container-fluid">
+                <p>
+                    <div align = "center">
+                        <h2>"Lets Create the Growth Strategy Together"<h2><br>
+                    </div>
+                    <div align = "center">
+                        <p> OnDemand Agility Solutions is a service based organization, founded in 2006 by entrepeneurs with dediated expertise and exposure in finance and technology. </p>
+                        <p> Our clientele includes top Fortune 500 companies, particularly leading Investment Banks, Insurance Companies and Radio Control & Sports Content Companies. </p>
+                        <p>We work on cutting edge technologies and providing customised solutions, like application development, data services, business process testing and quality assurance. </p>
+                    </div>
+                </p>
+            </div>
+        <!-- </div><br><br><br><br><br><br><br>
+        <marquee width="100%" direction="left" height="50px" scrollamount="15">
+          OnDemand Agility Solutions
+      </marquee> -->
+        <div class="footer">
+          <span align = "left"> &COPY; 2021 &nbsp; OnDemand Agility Solutions &trade;</span>
+        </div>
+    </body>
+
+    <script src= {{ url_for('static', filename = '/js/jquery.min.js') }}></script>
+    <script src= {{ url_for('static', filename = 'bootstrap/js/bootstrap.min.js') }}></script>
+
+</html>

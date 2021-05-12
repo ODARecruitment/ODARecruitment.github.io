@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Upload Page </title>
+        <link rel="stylesheet" href= {{ url_for('static', filename = 'css/style.css') }}>
+        <link rel="stylesheet" href= {{ url_for('static', filename = 'css/bootstrap.min.css') }}>
+        <script src= {{ url_for('static', filename = 'js/bootstrap.min.js') }}></script>
+        <script src= {{ url_for('static', filename = '/js/jquery.min.js') }}></script>
+    </head>
+
+    <body>
+        <div align ="center" class="bodytop">
+            <br>
+            <h1>Resume Screening</h1> 
+            <!-- <h3>ODA Test</h3> -->
+            <br>
+        </div>
+
+        <ul>
+            <li><a href="/" target="_self">Home</a></li>
+            <li><a href="/upload" target="_self">Upload</a></li>
+            <li style="float:right"><a class="active" href="/logout" target="_self">Logout</a></li>
+        </ul>
+         
+        <div class="col-sm-6">
+            <marquee width="50%" direction="left" height="20px">
+                Please Upload the Document here 👇👇👇
+            </marquee>
+            <h3> Please Upload the Document </h3>
+            <form action="/upload" method="post" enctype = multipart/form-data>
+            <input type="file" name="file" />
+            <button class="button button2" type="submit">Submit</button><br><br><br><br><br><br><br><br>
+            </form>
+            <br><br>
+            <p>
+                {{message}}
+            </p>
+        </div>
+
+        <div class="col-sm-6" >
+            <p>
+                JOB Description !!! <br>
+
+                Required skillset and experience <br>
+                Skillset and experience requirements are as follows. <br>
+                •	Good programming basics (any computer language including Java, C, Python or any other language).<br>
+                •	Very good verbal and written communication skills.<br>
+                •	Good analytical ability.<br>
+                •	Computer engineering graduate from reputed colleges.<br>
+                •	0 – 2 years of experience.<br>
+                •	Self-driven projects is not mandatory but is a definitive plus. This may include publishing of own website, <br>
+                    App on Google PlayStore or AppStore, any other project including hardware software interface, IoT etc.
+
+            </p>
+        </div>
+
+        <footer>
+            <div class="col-sm-12" style="background-color:rgb(211, 216, 221); text-align: center; padding: 18px;">
+                ODA TEST
+            </div>
+        </footer>
+    </body>
+</html>

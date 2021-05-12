@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Login Page </title>
+        <link rel="shortcut icon" type="image/jpg" href= {{ url_for('static', filename = 'image/login_icon.jpg') }}/>
+        <link rel="stylesheet" href= {{ url_for('static', filename = 'css/style.css') }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-grid.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-reboot.min.css") }}>
+        <link rel="stylesheet" href={{ url_for('static', filename="bootstrap/css/bootstrap-utilities.min.css") }}>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bodytop">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Resume Screening</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" target="_self">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row justify-content">
+            <div class="offset-md-4 col-md-4">
+                <br><br>
+                {% if alert %}
+                <h5>{{alert}}</h5>
+                {% endif %}
+                <form action="/admin" method="POST" class="form-container col-md-10">
+                    <h3 align = "center"> Recruiter Login </h3><hr>
+                    <div class="form-group">
+                        <label for="">Username</label>
+                        <input type="text" class="form-control" placeholder="Enter Username" aria-label="User Name" name="username" style="border-radius: 10px;" required>
+                        <br> 
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" aria-label="Password" name="password" style="border-radius: 10px;" required>
+                    </div>
+                    <br>
+                    <div class="form-group" align = "center">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+                <h5>{{info}}</h5>
+            </div>
+        </div>
+        <!-- <br><br><br><br>
+        <marquee width="100%" direction="left" height="50px" scrollamount="15">
+          OnDemand Agility Solutions
+        </marquee> -->
+        <div class="footer">
+            <span align = "left"> &COPY; 2021 &nbsp; OnDemand Agility Solutions &trade;</span>
+        </div>
+
+    </body>
+    <script src= {{ url_for('static', filename = '/js/jquery.min.js') }}></script>
+    <script src= {{ url_for('static', filename = 'bootstrap/js/bootstrap.min.js') }}></script>
+</html>
+
+
+
+
+<!-- <html>
+    <head>
+        <title> Login page </title>
+    </head>
+    <center>
+    <body bgcolor="teal">
+        <form action="/form_login" method="post">
+            <h3> UserName: </h3>
+            <input type="text" name="username">
+
+            <h3> Password: </h3>
+            <input type="password" name="password"><br /><br />
+
+            <input type="submit" value="Login">
+            
+        </form>
+        <h2>{{info}}</h2> 
+    </center>
+    </body>
+</html> -->
