@@ -3,11 +3,11 @@ import pickle
 import os
 import process
 
-application = Flask(__name__)
-application.secret_key = 'dont tell'
+main = Flask(__name__)
+main.secret_key = 'dont tell'
 
 
-@application.route('/', methods = ['POST', 'GET'])
+@main.route('/', methods = ['POST', 'GET'])
 def hello(): 
     return render_template("home.html")     
 
@@ -15,19 +15,19 @@ def hello():
 # def boot():
 #     return render_template("learning.html")
 
-@application.route('/logout', methods = ['POST', 'GET'])
+@main.route('/logout', methods = ['POST', 'GET'])
 def logout():
     session.pop('userN')
     return render_template("logout.html")
 
-@application.route('/upload', methods = ['GET', 'POST'])
+@main.route('/upload', methods = ['GET', 'POST'])
 def upload():
     ab = "upload.html"
     UPLOAD_FOLDER = "C:\\Users\\prasa\\projects\\recruitment_project\\resumes"
-    application.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+    main.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
     if request.method == "POST":
         file = request.files["file"]
-        file.save(os.path.join(application.config['UPLOAD_FOLDER'], file.filename))
+        file.save(os.path.join(main.config['UPLOAD_FOLDER'], file.filename))
         path = UPLOAD_FOLDER+"\\"+file.filename
         print(file.filename)
         process.read_doc(path)
@@ -35,18 +35,18 @@ def upload():
         return render_template(ab, message = "Uploaded Successfully")
     return render_template(ab)
 
-@application.route('/login', methods = ['POST', 'GET'])
+@main.route('/login', methods = ['POST', 'GET'])
 def login():
     return render_template("login.html")
 
-@application.route('/admin')
+@main.route('/admin')
 def admin():
     if 'userN' in session:
         return render_template("admin.html")
     else:
         return render_template("login.html", alert = "Please Login to Access Admin Page")
 
-@application.route('/admin', methods = ['POST', 'GET'])
+@main.route('/admin', methods = ['POST', 'GET'])
 def adminpage():
     # return render_template("admin.html")
     a = "admin.html"
@@ -63,7 +63,7 @@ def adminpage():
 
 
 if __name__ == '__main__':
-    application.run()
+    main.run()
 
 
 
