@@ -9,7 +9,7 @@ main.secret_key = 'dont tell'
 
 @main.route('/', methods = ['POST', 'GET'])
 def hello(): 
-    return render_template("index.html")     
+    return render_template("home.html")     
 
 # @app.route('/bootstrap')
 # def boot():
